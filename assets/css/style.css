@@ -4056,37 +4056,26 @@ word-wrap: break-word;
 #1.4	contact-info-map-section
 --------------------------------------------------------------*/
 .contact-info-map-section .content {
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
 
 .contact-info-map-section .left-col {
-  width: 50%;
-  height: 100%;
-  float: left;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-@media (max-width: 767px) {
-  .contact-info-map-section .left-col {
-    width: 100%;
-    float: none;
-    position: relative;
-    height: 300px;
-  }
+  flex: 0 0 50%;
+  max-width: 50%;
+  height: 400px; /* Match iframe height */
 }
 
 .contact-info-map-section .right-col {
+  flex: 0 0 50%;
+  max-width: 50%;
   background-color: #0d1e2d;
-  width: 50%;
-  float: right;
-  padding: 60px 15px 60px 85px;
   color: #989fa7;
-  overflow: hidden;
+  padding: 60px 15px 60px 85px;
 }
 
+/* Mobile-first adjustments */
 @media (max-width: 991px) {
   .contact-info-map-section .right-col {
     padding: 50px 15px 50px 45px;
@@ -4094,127 +4083,98 @@ word-wrap: break-word;
 }
 
 @media (max-width: 767px) {
+  .contact-info-map-section .left-col,
   .contact-info-map-section .right-col {
-    width: 100%;
-    float: none;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
-}
-
-@media (max-width: 767px) {
+  
+  .contact-info-map-section .left-col {
+    height: 300px;
+    order: -1; /* Make map appear first on mobile */
+  }
+  
   .contact-info-map-section .right-col {
-    padding: 50px 15px 50px 25px;
+    padding: 50px 25px;
   }
 }
 
 .contact-info-map-section .right-col .inner {
   max-width: 460px;
-  float: left;
-  margin-right: auto;
-  overflow: hidden;
+  width: 100%;
 }
 
+/* Title and contact info layout */
 .contact-info-map-section .inner .title-text,
 .contact-info-map-section .inner .contact-info {
-  width: 50%;
-  float: left;
-}
-
-@media (max-width: 1199px) {
-  .contact-info-map-section .inner .title-text,
-  .contact-info-map-section .inner .contact-info {
-    width: 100%;
-    float: none;
-  }
-}
-
-.contact-info-map-section .inner .contact-info {
-  width: 200px;
-  float: right;
-}
-
-@media (max-width: 1199px) {
-  .contact-info-map-section .inner .contact-info {
-    width: 100%;
-    float: none;
-    margin-top: 50px;
-  }
-}
-
-@media (max-width: 991px) {
-  .contact-info-map-section .inner .contact-info {
-    margin-top: 20px;
-  }
+  width: 100%;
+  float: none;
 }
 
 .contact-info-map-section .title-text h3 {
-  font-size: 30px;
   font-size: 2rem;
   font-weight: 500;
   color: #fff;
   margin: 0 0 0.4em;
 }
 
-@media (max-width: 991px) {
-  .contact-info-map-section .title-text h3 {
-    font-size: 25px;
-    font-size: 1.66667rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .contact-info-map-section .title-text h3 {
-    font-size: 22px;
-    font-size: 1.46667rem;
-  }
-}
-
 .contact-info-map-section .title-text p {
-  margin: 0;
+  margin: 0 0 1.5em;
+}
+
+/* Contact info list styling */
+.contact-info-map-section .contact-info li {
+  font-size: 1.06667rem;
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 15px;
+  word-wrap: break-word;
 }
 
 .contact-info-map-section .contact-info i {
   color: #ff5e14;
-  display: inline-block;
-  padding-right: 5px;
   position: absolute;
   left: 0;
   top: 3px;
 }
 
-.contact-info-map-section .contact-info li {
-  font-size: 16px;
-  font-size: 1.06667rem;
-  position: relative;
-  padding-left: 22px;
-}
-
+/* Responsive typography */
 @media (max-width: 991px) {
+  .contact-info-map-section .title-text h3 {
+    font-size: 1.66667rem;
+  }
+  
   .contact-info-map-section .contact-info li {
-    font-size: 15px;
     font-size: 1rem;
   }
 }
 
 @media (max-width: 767px) {
+  .contact-info-map-section .title-text h3 {
+    font-size: 1.46667rem;
+  }
+  
   .contact-info-map-section .contact-info li {
-    font-size: 14px;
     font-size: 0.93333rem;
   }
 }
 
-.contact-info-map-section .contact-info ul > li + li {
-  margin-top: 15px;
+/* Spacing adjustments */
+.contact-info-map-section .inner .contact-info {
+  margin-top: 30px;
 }
 
-.contact-info-map-section .location-map {
-  background-color: #f1f1f1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+@media (max-width: 1199px) {
+  .contact-info-map-section .inner .contact-info {
+    margin-top: 50px;
+  }
 }
 
+@media (max-width: 991px) {
+  .contact-info-map-section .inner .contact-info {
+    margin-top: 30px;
+  }
+}
 /*--------------------------------------------------------------
 #1.5	news-letter-section
 --------------------------------------------------------------*/
