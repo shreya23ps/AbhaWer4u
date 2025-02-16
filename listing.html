@@ -146,11 +146,62 @@
             .we-input-group {
                 flex-direction: column;
             }
-            .we-unit-select {
-                width: 50%;
-            }
+            
         }
-    </style>
+     /* Improved File Upload */
+     .we-file-upload {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .we-file-upload input[type="file"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .we-upload-button {
+        background: #2b6cc2;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mobile Responsive Fixes */
+    @media (max-width: 767px) {
+        .we-input-group {
+            flex-direction: column;
+        }
+        
+        .we-unit-select {
+            width: 100% !important;
+            margin-top: 10px;
+        }
+        
+        .we-file-upload {
+            display: block;
+        }
+        
+        .we-checkbox-group {
+            margin: 15px 0;
+        }
+    }
+
+    /* Unit Select Fix */
+    .we-unit-select {
+        flex: 0 0 120px;
+        width: 120px;
+        min-width: 120px;
+    }
+</style>
     
     
 
@@ -339,9 +390,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="we-form-group">
-                                                <label for="we-builtup-area">Office Space *</label>
+                                                <label for="we-office-space">Office Space *</label>
                                                 <div class="we-input-group">
-                                                    <input type="number" class="we-form-control" id="we-builtup-area" name="builtup_area" required>
+                                                    <input type="number" class="we-form-control" id="we-office-space" name="office_space" required>
                                                     <select class="we-form-control we-unit-select">
                                                         <option>sq ft</option>
                                                         <option>sq m</option>
@@ -351,9 +402,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="we-form-group">
-                                                <label for="we-builtup-area">Open Space *</label>
+                                                <label for="we-open-space">Open Space *</label>
                                                 <div class="we-input-group">
-                                                    <input type="number" class="we-form-control" id="we-builtup-area" name="builtup_area" required>
+                                                    <input type="number" class="we-form-control" id="we-open-space" name="open_space" required>
                                                     <select class="we-form-control we-unit-select">
                                                         <option>sq ft</option>
                                                         <option>sq m</option>
@@ -363,9 +414,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="we-form-group">
-                                                <label for="we-builtup-area">Builtup Area *</label>
+                                                <label for="we-crane">Crane Provision *</label>
                                                 <div class="we-input-group">
-                                                    <input type="number" class="we-form-control" id="we-builtup-area" name="builtup_area" required>
+                                                    <input type="number" class="we-form-control" id="we-crane" name="crane" required>
                                                     <select class="we-form-control we-unit-select">
                                                         <option>ton</option>
                                                         <option>Quintal</option>
@@ -375,9 +426,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="we-form-group">
-                                                <label for="we-builtup-area">Shed Height *</label>
+                                                <label for="we-shed-height">Shed Height *</label>
                                                 <div class="we-input-group">
-                                                    <input type="number" class="we-form-control" id="we-builtup-area" name="builtup_area" required>
+                                                    <input type="number" class="we-form-control" id="we-shed-height" name="shed_height" required>
                                                     <select class="we-form-control we-unit-select">
                                                         <option>meter</option>
                                                         <option>ft</option>
@@ -471,6 +522,22 @@
 
     <!-- Custom script for this template -->
     <script src="assets/js/script.js"></script>
+    <!-- Add this JavaScript at bottom before closing body tag -->
+<script>
+    // File Upload Handler
+    document.getElementById('we-property-images').addEventListener('change', function(e) {
+        const files = e.target.files;
+        const fileName = files.length > 1 ? 
+            `${files.length} files selected` : 
+            files[0].name;
+        document.querySelector('.we-file-names').textContent = fileName;
+    });
+
+    // Trigger file input when button clicked
+    document.querySelector('.we-upload-button').addEventListener('click', function() {
+        document.getElementById('we-property-images').click();
+    });
+</script>
 </body>
 
 </html>
