@@ -9,7 +9,7 @@
     <meta name="author" content="themexriver">
 
     <!-- Page Title -->
-    <title> WeR4U - Login </title>
+    <title> WeR4U - Signup </title>
 
     <!-- Icon fonts -->
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -132,10 +132,10 @@
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="title-breadcrumb">
-                            <h2>Login</h2>
+                            <h2>Signup</h2>
                             <ol class="breadcrumb">
                                 <li><a href="index-2.html">Home</a></li>
-                                <li>Login</li>
+                                <li>Signup</li>
                             </ol>
                         </div>
                     </div>
@@ -151,17 +151,25 @@
                 <div class="row">
                     <div class="col col-lg-8 col-sm-8">
                         <div class="contact-form">
-                            <form class="contact-validation-active" id="login-form">
-                                <!-- Login Section -->
+                            <form class="contact-validation-active" id="signup-form">
+                                <!-- Signup Section -->
                                 <div class="row wer4u-form-section">
-                                    <h3>Login</h3>
+                                    <h3>Signup</h3>
                                     <div class="col col-sm-6">
-                                        <label for="login-email">Email</label>
-                                        <input type="email" class="form-control" id="login-email" name="login_email" required>
+                                        <label for="signup-name">Full Name</label>
+                                        <input type="text" class="form-control" id="signup-name" name="signup_name" required>
                                     </div>
                                     <div class="col col-sm-6">
-                                        <label for="login-password">Password</label>
-                                        <input type="password" class="form-control" id="login-password" name="login_password" required>
+                                        <label for="signup-email">Email</label>
+                                        <input type="email" class="form-control" id="signup-email" name="signup_email" required>
+                                    </div>
+                                    <div class="col col-sm-6">
+                                        <label for="signup-password">Password</label>
+                                        <input type="password" class="form-control" id="signup-password" name="signup_password" required>
+                                    </div>
+                                    <div class="col col-sm-6">
+                                        <label for="signup-confirm-password">Confirm Password</label>
+                                        <input type="password" class="form-control" id="signup-confirm-password" name="signup_confirm_password" required>
                                     </div>
                                 </div>
 
@@ -169,7 +177,7 @@
                                 <div class="row">
                                     <div class="col col-xs-12">
                                         <div class="submit-btn">
-                                            <button type="submit" class="theme-btn-s2">Login</button>
+                                            <button type="submit" class="theme-btn-s2">Signup</button>
                                             <div id="loader">
                                                 <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
                                             </div>
@@ -177,16 +185,16 @@
                                     </div>
                                     <div class="col col-xs-12">
                                         <div class="error-handling-messages">
-                                            <div id="success">Login successful!</div>
-                                            <div id="error"> Invalid email or password. Please try again. </div>
+                                            <div id="success">Signup successful!</div>
+                                            <div id="error"> Passwords do not match. Please try again. </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Signup Option -->
+                                <!-- Login Option -->
                                 <div class="row">
                                     <div class="col col-xs-12">
-                                        <p>New user? <a href="signup.html">Sign up here</a>.</p>
+                                        <p>Already have an account? <a href="listing.html">Login here</a>.</p>
                                     </div>
                                 </div>
                             </form>
@@ -194,7 +202,7 @@
                     </div>
                     <div class="col col-lg-3 col-sm-4">
                         <div class="contact-info">
-                            <h3>Why Login?</h3>
+                            <h3>Why Signup?</h3>
                             <p>Benefits of creating an account:</p>
                             <ul>
                                 <li><i class="fa fa-check"></i> Save and manage your property listings.</li>
@@ -208,7 +216,8 @@
             </div> <!-- end container -->
         </section>
         <!-- end contact-pg-contact-section -->
-    
+
+
         
         <!-- end contact-pg-contact-section -->
 
