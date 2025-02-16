@@ -1467,8 +1467,8 @@ img {
 .navbar-nav li:last-child a {
     background-color: #ff5722; /* Change to your preferred color */
     color: white !important; /* Ensure text is visible */
-    padding: 8px 10px;
-    border-radius: 5px;
+    padding: 3px 3px;
+    border-radius: 2px;
     display: inline-block;
     font-weight: bold;
     text-align: center;
