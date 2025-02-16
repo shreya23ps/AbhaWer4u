@@ -1464,19 +1464,20 @@ img {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-.navbar-nav li:last-child a {
-    background-color: #ff5722; /* Change to your preferred color */
-    color: white !important; /* Ensure text is visible */
-    padding: 3px 3px;
-    border-radius: 2px;
-    display: inline-block;
+.create-listing-btn a {
+    background-color: #ff5722;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 5px;
     font-weight: bold;
+    display: inline-block;
     text-align: center;
 }
 
-.navbar-nav li:last-child a:hover {
-    background-color: #e64a19; /* Darker shade on hover */
+.create-listing-btn a:hover {
+    background-color: #e64a19;
 }
+
 
 
 .site-header .navigation > .container {
